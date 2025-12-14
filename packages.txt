@@ -1,0 +1,8 @@
+# Packages in no specific order
+stow
+alacritty
+nvim
+firefox
+zsh
+curl
+
