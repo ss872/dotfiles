@@ -40,14 +40,17 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # --------- Aliases ---------
 alias ll="ls -lah"
+alias cdh="cd ~"
+alias ..="cd .."
+
 alias gs="git status"
 alias gc="git commit"
 alias gp="git push"
+alias ga="git add ."
+alias gcm="git commit -m"
+
 alias vi="nvim"
 alias vim="nvim"
-alias gcm="git commit -m"
-alias gp="git push"
-alias ga="git add ."
 # --------- Fix plugin load order (syntax highlighting last) ---------
 # If something seems off with highlighting, ensure this stays at the end.
 if [ -f "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
