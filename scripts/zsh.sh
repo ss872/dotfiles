@@ -18,41 +18,8 @@ err() { printf "\033[1;31m[ERR]\033[0m %s\n" "$*" >&2; }
 
 have() { command -v "$1" >/dev/null 2>&1; }
 
-install_pkg() {
-  local pkg="$1"
-  if have apt-get; then
-    sudo apt-get update -y
-    sudo apt-get install -y "$pkg"
-  elif have dnf; then
-    sudo dnf install -y "$pkg"
-  elif have brew; then
-    brew install "$pkg"
-  else
-    warn "No known package manager found (apt-get/dnf/brew). Install $pkg manually."
-  fi
-}
-
 # ======================
-# 1. Ensure basic tools
-# ======================
-
-log "Ensuring git is installed..."
-if ! have git; then
-  install_pkg git
-fi
-
-log "Ensuring zsh is installed..."
-if ! have zsh; then
-  install_pkg zsh
-fi
-
-log "Ensuring curl is installed..."
-if ! have curl; then
-  install_pkg curl
-fi
-
-# ======================
-# 2. Install Oh My Zsh
+# 1. Install Oh My Zsh
 # ======================
 
 if [ ! -d "${HOME}/.oh-my-zsh" ]; then
@@ -64,7 +31,7 @@ else
 fi
 
 # ======================
-# 3. Install plugins (autosuggestions + syntax highlighting)
+# 2. Install plugins (autosuggestions + syntax highlighting)
 # ======================
 
 ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
@@ -88,7 +55,7 @@ else
 fi
 
 # ======================
-# 4. Change default shell to zsh
+# 3. Change default shell to zsh
 # ======================
 
 CURRENT_SHELL="${SHELL:-}"
