@@ -51,6 +51,8 @@ alias gcm="git commit -m"
 
 alias vi="nvim"
 alias vim="nvim"
+alias ff="fastfetch"
+
 # --------- Fix plugin load order (syntax highlighting last) ---------
 # If something seems off with highlighting, ensure this stays at the end.
 if [ -f "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
