@@ -12,36 +12,6 @@ gestures {
     }
 }
 
-// Input device configuration.
-// Find the full list of options on the wiki:
-// https://github.com/YaLTeR/niri/wiki/Configuration:-Input
-input {
-    keyboard {
-        xkb {
-        }
-        numlock
-    }
-    touchpad {
-	    tap
-	    natural-scroll
-    }
-    mouse {
-    }
-    trackpoint {
-    }
-    disable-power-key-handling
-}
-// You can configure outputs by their name, which you can find
-// by running `niri msg outputs` while inside a niri instance.
-// The built-in laptop monitor is usually called "eDP-1".
-// Find more information on the wiki:
-// https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
-// Remember to uncomment the node by removing "/-"!
-/-output "eDP-2" {
-    mode "2560x1600@239.998993"
-    position x=2560 y=0
-    variable-refresh-rate
-}
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
@@ -174,3 +144,5 @@ include "dms/layout.kdl"
 include "dms/alttab.kdl"
 include "dms/binds.kdl"
 include "dms/window-rule.kdl"
+include "dms/input-device.kdl"
+include "dms/monitor.kdl"
