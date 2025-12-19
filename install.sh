@@ -6,9 +6,9 @@ set -eu
 # - Then interactively asks before running other scripts
 
 REPO_ROOT="$(cd "$(dirname "$0")" && pwd)"
-SCRIPTS_DIR="$REPO_ROOT/scripts"
+SCRIPTS_DIR="$REPO_ROOT/others/scripts"
 
-PACKAGES_FILE="$REPO_ROOT/packages.txt"
+PACKAGES_FILE="$REPO_ROOT/others/packages.txt"
 PACKAGES_SCRIPT="$SCRIPTS_DIR/install-packages.sh"
 
 if [ ! -x "$PACKAGES_SCRIPT" ]; then
