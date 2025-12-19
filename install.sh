@@ -10,9 +10,16 @@ SCRIPTS_DIR="$REPO_ROOT/others/scripts"
 
 PACKAGES_FILE="$REPO_ROOT/others/packages.txt"
 PACKAGES_SCRIPT="$SCRIPTS_DIR/install-packages.sh"
+STOW_SCRIPT="$SCRIPTS_DIR/stow-each.sh"
 
 if [ ! -x "$PACKAGES_SCRIPT" ]; then
   printf 'ERROR: %s not found or not executable\n' "$PACKAGES_SCRIPT" >&2
+  exit 1
+fi
+
+if [ ! -x "$STOW_SCRIPT" ]; then
+  printf 'ERROR: %s not found or not executable\n' "$STOW_SCRIPT" >&2
+  printf 'Hint: chmod +x %s\n' "$STOW_SCRIPT" >&2
   exit 1
 fi
 
@@ -33,8 +40,22 @@ fi
 
 printf '\n'
 
+printf 'Run %s? [y/N] ' "$(basename "$STOW_SCRIPT")"
+read ans
+case "$ans" in
+  y|Y)
+    "$STOW_SCRIPT"
+    ;;
+  *)
+    printf 'Skipping %s\n' "$(basename "$STOW_SCRIPT")"
+    ;;
+esac
+
+printf '\n'
+
 for script in "$SCRIPTS_DIR"/*.sh; do
   [ "$script" = "$PACKAGES_SCRIPT" ] && continue
+  [ "$script" = "$STOW_SCRIPT" ] && continue
   [ -x "$script" ] || continue
 
   name="$(basename "$script")"
