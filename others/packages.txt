@@ -5,4 +5,3 @@ nvim
 firefox
 zsh
 curl
-
