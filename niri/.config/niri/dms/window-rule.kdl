@@ -48,12 +48,12 @@ window-rule {
     open-floating true
 }
 
-window-rule {
-    match app-id=r#"firefox$"# 
-    match app-id=r#"vscodium"#
-    match app-id=r#"^vesktop$"#
-    open-maximized true
-}
+//window-rule {
+//    match app-id=r#"firefox$"# 
+//    match app-id=r#"vscodium"#
+//    match app-id=r#"^vesktop$"#
+//    open-maximized true
+//}
 
 window-rule {
     match app-id=r#"org.quickshell$"#
