@@ -50,7 +50,7 @@ window-rule {
 
 window-rule {
     match app-id=r#"firefox$"# 
-    match app-id=r#"VSCodium$"#
+    match app-id=r#"vscodium"#
     match app-id=r#"^vesktop$"#
     open-maximized true
 }
