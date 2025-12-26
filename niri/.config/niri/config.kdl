@@ -1,17 +1,25 @@
 include "dms/colors.kdl"
 include "dms/layout.kdl"
 include "dms/alttab.kdl"
-include "dms/binds.kdl"
-include "dms/window-rule.kdl"
-include "dms/input-device.kdl"
-include "dms/monitor.kdl"
-include "dms/animations.kdl"
+include "dms/wpblur.kdl"
+
+include "configs/layout.kdl"
+include "configs/binds.kdl"
+include "configs/window-rule.kdl"
+include "configs/input-device.kdl"
+include "configs/monitor.kdl"
+include "configs/animations.kdl"
 
 spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
 
 prefer-no-csd
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+layer-rule {
+    match namespace="^quickshell$"
+    place-within-backdrop true
+}
 
 config-notification {
     disable-failed
