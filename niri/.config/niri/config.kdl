@@ -1,29 +1,15 @@
-include "dms/colors.kdl"
-include "dms/layout.kdl"
-include "dms/alttab.kdl"
-include "dms/wpblur.kdl"
-
-include "configs/layout.kdl"
 include "configs/binds.kdl"
+include "configs/animations.kdl"
+include "configs/monitor.kdl"
+include "configs/layout.kdl"
 include "configs/window-rule.kdl"
 include "configs/input-device.kdl"
-include "configs/monitor.kdl"
-include "configs/animations.kdl"
 
-spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
+spawn-at-startup "qs" "-c" "noctalia-shell"
 
 prefer-no-csd
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
-
-layer-rule {
-    match namespace="^quickshell$"
-    place-within-backdrop true
-}
-
-config-notification {
-    disable-failed
-}
 
 gestures {
     hot-corners {
@@ -47,13 +33,4 @@ hotkey-overlay {
 
 debug {
     honor-xdg-activation-with-invalid-serial
-}
-
-recent-windows {
-    binds {
-        Alt+Tab         { next-window scope="output"; }
-        Alt+Shift+Tab   { previous-window scope="output"; }
-        Alt+grave       { next-window filter="app-id"; }
-        Alt+Shift+grave { previous-window filter="app-id"; }
-    }
 }

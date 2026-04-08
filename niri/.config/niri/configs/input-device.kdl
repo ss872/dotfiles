@@ -13,6 +13,6 @@ input {
     trackpoint {
     }
     focus-follows-mouse
-    warp-mouse-to-focus
+    // warp-mouse-to-focus
     disable-power-key-handling
 }
