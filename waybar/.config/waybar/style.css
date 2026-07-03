@@ -1,0 +1,113 @@
+@define-color bg #0b0e14;
+@define-color bg-alt #121212;
+@define-color surface #1e222a;
+@define-color surface-soft #2a2a2a;
+@define-color text #e8e6e3;
+@define-color muted #8a8f98;
+@define-color amber #facc15;
+@define-color amber-soft #e6b450;
+@define-color cream #fff4cc;
+@define-color red #ff7a90;
+
+* {
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  font-family: "FiraMono Nerd Font Mono", "Fira Code", monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+  min-height: 0;
+}
+
+window#waybar {
+  background: transparent;
+  color: @text;
+}
+
+tooltip {
+  background: alpha(@bg, 0.96);
+  border: 1px solid alpha(@amber, 0.55);
+  border-radius: 8px;
+  color: @text;
+}
+
+tooltip label {
+  color: @text;
+  padding: 4px 6px;
+}
+
+#workspaces,
+#clock,
+#pulseaudio,
+#network,
+#battery,
+#tray {
+  background: alpha(@bg, 0.88);
+  border: 1px solid alpha(@amber-soft, 0.24);
+  border-radius: 999px;
+  color: @text;
+  margin: 4px 2px;
+  padding: 0 12px;
+}
+
+#workspaces {
+  padding: 0 8px;
+}
+
+#workspaces button {
+  background: @surface-soft;
+  border-radius: 999px;
+  color: transparent;
+  font-size: 0;
+  margin: 8px 4px;
+  min-height: 8px;
+  min-width: 8px;
+  padding: 0;
+  transition: all 140ms ease;
+}
+
+#workspaces button:hover {
+  background: alpha(@cream, 0.72);
+}
+
+#workspaces button.active,
+#workspaces button.focused {
+  background: @amber;
+  min-width: 22px;
+}
+
+#workspaces button.urgent {
+  background: @red;
+  min-width: 16px;
+}
+
+#clock {
+  color: @cream;
+  padding: 0 16px;
+}
+
+#pulseaudio,
+#network,
+#battery {
+  color: @text;
+}
+
+#pulseaudio.muted,
+#network.disconnected {
+  color: @muted;
+}
+
+#battery.warning {
+  color: @amber;
+}
+
+#battery.critical {
+  background: alpha(@red, 0.18);
+  border-color: alpha(@red, 0.48);
+  color: @red;
+}
+
+#tray {
+  padding: 0 10px;
+}

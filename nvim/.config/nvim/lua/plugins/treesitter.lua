@@ -9,7 +9,21 @@ function M.setup()
   treesitter.setup()
 
   vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "bash", "lua", "vim", "help" },
+    pattern = {
+      "bash",
+      "css",
+      "fish",
+      "help",
+      "javascript",
+      "json",
+      "jsonc",
+      "kdl",
+      "lua",
+      "markdown",
+      "typescript",
+      "vim",
+      "yaml",
+    },
     callback = function(event)
       pcall(vim.treesitter.start, event.buf)
       vim.bo[event.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"

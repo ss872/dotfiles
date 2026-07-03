@@ -2,6 +2,9 @@ local M = {}
 
 local modules = {
   "plugins.gitsigns",
+  "plugins.mason",
+  "plugins.lsp",
+  "plugins.conform",
   "plugins.neo-tree",
   "plugins.telescope",
   "plugins.treesitter",

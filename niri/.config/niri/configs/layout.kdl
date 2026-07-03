@@ -12,8 +12,6 @@ layout {
         proportion 1.0
     }
 
-    default-column-width { proportion 1.0; }
-
     focus-ring {
         width 2
         active-color   "#f9e2af"
@@ -35,9 +33,4 @@ layout {
     insert-hint {
         color "#f9e2af80"
     }
-}
-
-layer-rule {
-  match namespace="^noctalia-wallpaper*"
-  place-within-backdrop true
 }

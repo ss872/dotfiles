@@ -1,13 +1,7 @@
 window-rule {
     open-focused true
-    open-maximized true
     geometry-corner-radius 8
     clip-to-geometry true
-}
-
-window-rule {
-    match app-id=r#"^org\.wezfurlong\.wezterm$"#
-    default-column-width {}
 }
 
 window-rule {
@@ -38,7 +32,7 @@ window-rule {
 window-rule {
     match app-id=r#"^org\.wezfurlong\.wezterm$"#
     match app-id="Alacritty"
-    match app-id="zen"
+    match app-id="app.zen_browser.zen"
     match app-id="com.mitchellh.ghostty"
     match app-id="kitty"
     draw-border-with-background false
@@ -53,9 +47,4 @@ window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     match app-id="zoom"
     open-floating true
-}
-
-debug {
-  // Allows notification actions and window activation from Noctalia.
-  honor-xdg-activation-with-invalid-serial
 }

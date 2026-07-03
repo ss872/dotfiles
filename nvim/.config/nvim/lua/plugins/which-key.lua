@@ -11,9 +11,11 @@ function M.setup()
     { "<leader>w", desc = "Save file" },
     { "<leader>q", desc = "Quit window" },
     { "<leader>e", desc = "Toggle file tree" },
+    { "<leader>c", group = "Code" },
     { "<leader>f", group = "Find" },
     { "<leader>g", group = "Git" },
     { "<leader>h", group = "Hunks" },
+    { "<leader>l", group = "LSP" },
   })
 end
 

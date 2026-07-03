@@ -8,3 +8,5 @@ vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
 vim.opt.clipboard = "unnamedplus"
 vim.opt.updatetime = 250
+vim.opt.completeopt = { "menuone", "noselect", "popup" }
+vim.opt.autocomplete = true

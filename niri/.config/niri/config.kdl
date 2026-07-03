@@ -5,7 +5,7 @@ include "configs/layout.kdl"
 include "configs/window-rule.kdl"
 include "configs/input-device.kdl"
 
-spawn-at-startup "qs" "-c" "noctalia-shell"
+spawn-at-startup "waybar"
 
 prefer-no-csd
 

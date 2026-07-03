@@ -16,12 +16,35 @@ function M.setup()
       follow_current_file = {
         enabled = true,
       },
+      filtered_items = {
+        visible = true,
+        hide_dotfiles = false,
+        hide_gitignored = false,
+        hide_hidden = false,
+        never_show_by_pattern = {
+          ".cache",
+          "dist",
+          "node_modules",
+          "target",
+        },
+        never_show = {
+          ".git",
+        },
+      },
       hijack_netrw_behavior = "open_default",
       use_libuv_file_watcher = true,
     },
     window = {
       position = "left",
       width = 34,
+    },
+    event_handlers = {
+      {
+        event = "file_opened",
+        handler = function()
+          require("neo-tree.command").execute({ action = "close" })
+        end,
+      },
     },
   })
 end

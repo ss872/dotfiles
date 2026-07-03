@@ -12,7 +12,7 @@ input {
     }
     trackpoint {
     }
-    focus-follows-mouse
+    // focus-follows-mouse
     // warp-mouse-to-focus
     disable-power-key-handling
 }
