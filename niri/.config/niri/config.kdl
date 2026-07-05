@@ -5,7 +5,9 @@ include "configs/layout.kdl"
 include "configs/window-rule.kdl"
 include "configs/input-device.kdl"
 
+spawn-at-startup "swaybg" "-i" "/home/sshyam/.config/niri/wallpapers/zenitsu-agatsuma.png" "-m" "fill"
 spawn-at-startup "waybar"
+spawn-at-startup "swayidle" "-w" "before-sleep" "swaylock -f"
 
 prefer-no-csd
 
